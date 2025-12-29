@@ -42,23 +42,27 @@ The final inverter layout featuring optimized area and symmetric routing.
 Verification ensures the design is free of manufacturing errors and matches the electrical intent.
 
 ### Design Rule Check (DRC)
-Checking for minimum spacing, width, and enclosure violations specific to the 90nm rule deck.
+The DRC verifies that all geometric shapes satisfy the GPDK 90nm rules (e.g., minimum poly width, metal spacing, and well enclosure).
+* **Process:** The Assura DRC engine scans the GDSII data against the technology's rule deck.
+* **Result:** **Clean.** No violations found.
 | DRC Run in Progress | DRC Result: Clean |
 | :--- | :--- |
-| ![DRC Progress]<img width="1565" height="806" alt="Screenshot 2025-08-06 134407" src="https://github.com/user-attachments/assets/604d4887-8d9f-4681-a4ee-4ff5538a7c19" /> | ![DRC Pass]<img width="1456" height="683" alt="Screenshot 2025-08-06 134421" src="https://github.com/user-attachments/assets/5d1a8cd7-1a08-4c54-a2cb-c829fabdb662" />
+|![DRC Progress]<img width="1565" height="806" alt="Screenshot 2025-08-06 134407" src="https://github.com/user-attachments/assets/604d4887-8d9f-4681-a4ee-4ff5538a7c19" /> | ![DRC Pass]<img width="1456" height="683" alt="Screenshot 2025-08-06 134421" src="https://github.com/user-attachments/assets/5d1a8cd7-1a08-4c54-a2cb-c829fabdb662" />
  |
 
 ### Layout vs. Schematic (LVS)
-The LVS tool compares the extracted netlist from the layout against the source schematic.
-> **Status:** ✅ Schematic and Layout Match.
-![LVS Pass]<img width="1121" height="696" alt="Screenshot 2025-08-06 134437" src="https://github.com/user-attachments/assets/92ea73f8-ae32-49a2-8f58-142005cb157d" />
+LVS extraction identifies the devices and nets in the layout and compares them to the schematic netlist. It checks for:
+1. **Device Mismatch:** Correct number of PMOS/NMOS.
+2. **Property Mismatch:** Width ($W$) and Length ($L$) values.
+3. **Connectivity:** Correct wiring of gates, sources, and drains.
+<img width="1121" height="696" alt="Screenshot 2025-08-06 134437" src="https://github.com/user-attachments/assets/92ea73f8-ae32-49a2-8f58-142005cb157d" />
 
 
 ---
 
 ## 4. Parasitic Extraction (RCX)
 To perform post-layout simulations, parasitic resistance and capacitance are extracted to account for interconnect delays.
-![RC Extraction]<img width="1517" height="817" alt="Screenshot 2025-08-06 134505" src="https://github.com/user-attachments/assets/428411d7-4f2c-439f-99a7-27f5f29d7e3d" />
+<img width="1517" height="817" alt="Screenshot 2025-08-06 134505" src="https://github.com/user-attachments/assets/428411d7-4f2c-439f-99a7-27f5f29d7e3d" />
 
 
 ---
