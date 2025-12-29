@@ -48,7 +48,6 @@ The DRC verifies that all geometric shapes satisfy the GPDK 90nm rules (e.g., mi
 | DRC Run in Progress | DRC Result: Clean |
 | :--- | :--- |
 |![DRC Progress]<img width="1565" height="806" alt="Screenshot 2025-08-06 134407" src="https://github.com/user-attachments/assets/604d4887-8d9f-4681-a4ee-4ff5538a7c19" /> | ![DRC Pass]<img width="1456" height="683" alt="Screenshot 2025-08-06 134421" src="https://github.com/user-attachments/assets/5d1a8cd7-1a08-4c54-a2cb-c829fabdb662" />
- |
 
 ### Layout vs. Schematic (LVS)
 LVS extraction identifies the devices and nets in the layout and compares them to the schematic netlist. It checks for:
